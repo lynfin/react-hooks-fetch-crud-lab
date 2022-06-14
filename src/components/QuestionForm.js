@@ -1,14 +1,15 @@
 import React, { useState } from "react";
 
 function QuestionForm({ onAddQuestion }) {
-  const [formData, setFormData] = useState({
+  const blankForm = {
     prompt: "",
     answer1: "",
     answer2: "",
     answer3: "",
     answer4: "",
     correctIndex: 0,
-  });
+  };
+  const [formData, setFormData] = useState(blankForm);
 
   function handleChange(event) {
     setFormData({
@@ -40,7 +41,9 @@ function QuestionForm({ onAddQuestion }) {
       body: JSON.stringify(dbData),
     })
       .then((r) => r.json())
-      .then((newQuestion) => onAddQuestion(newQuestion));
+      .then((newQuestion) => {
+        onAddQuestion(newQuestion);
+      });
   }
 
   return (
