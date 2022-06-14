@@ -10,7 +10,14 @@ function QuestionItem({ question, onRemoveQuestion }) {
   ));
 
   function handleClick(event) {
-    onRemoveQuestion(question);
+    fetch(`http://localhost:4000/questions/${id}`, {
+      method: "DELETE",
+      headers: {
+        "Content-Type": "application/json",
+      },
+    }).then(() => {
+      onRemoveQuestion(question);
+    });
   }
 
   return (
