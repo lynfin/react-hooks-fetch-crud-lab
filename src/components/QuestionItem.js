@@ -9,6 +9,10 @@ function QuestionItem({ question, onRemoveQuestion }) {
     </option>
   ));
 
+  function handleClick(event) {
+    onRemoveQuestion(question);
+  }
+
   return (
     <li>
       <h4>Question {id}</h4>
@@ -17,9 +21,7 @@ function QuestionItem({ question, onRemoveQuestion }) {
         Correct Answer:
         <select defaultValue={correctIndex}>{options}</select>
       </label>
-      <button onClick={() => onRemoveQuestion(question)}>
-        Delete Question
-      </button>
+      <button onClick={handleClick}>Delete Question</button>
     </li>
   );
 }
