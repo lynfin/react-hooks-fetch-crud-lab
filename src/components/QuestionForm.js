@@ -30,8 +30,17 @@ function QuestionForm(props) {
       ],
     };
 
-    console.log("formData", formData);
-    console.log("dbData", dbData);
+    //console.log("formData", formData);
+    //console.log("dbData", dbData);
+    fetch("http://localhost:4000/questions", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(dbData),
+    })
+      .then((r) => r.json())
+      .then((newQuestion) => console.log(newQuestion));
   }
 
   return (
