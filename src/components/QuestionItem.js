@@ -21,7 +21,18 @@ function QuestionItem({ question, onRemoveQuestion, onUpdateQuestion }) {
   }
 
   function handleChange(event) {
-    console.log("Answer changed to", event.target.value);
+    fetch(`http://localhost:4000/questions/${id}`, {
+      method: "PATCH",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ correctIndex: event.target.value }),
+    })
+      .then((r) => r.json())
+      .then((updatedQuestion) => {
+        //console.log("updated question:", updatedQuestion);
+        onUpdateQuestion(updatedQuestion);
+      });
   }
   return (
     <li>
