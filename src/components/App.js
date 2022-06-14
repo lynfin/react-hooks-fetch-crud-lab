@@ -28,13 +28,29 @@ function App() {
       questions.filter((question) => question.id !== deletedQuestion.id)
     );
   };
+
+  const updateQuestion = (updatedQuestion) => {
+    setQuestions(
+      questions.map((question) => {
+        if (question.id === updatedQuestion.id) {
+          return updatedQuestion;
+        } else {
+          return question;
+        }
+      })
+    );
+  };
   return (
     <main>
       <AdminNavBar onChangePage={setPage} />
       {page === "Form" ? (
         <QuestionForm onAddQuestion={addQuestion} />
       ) : (
-        <QuestionList questions={questions} onRemoveQuestion={removeQuestion} />
+        <QuestionList
+          questions={questions}
+          onRemoveQuestion={removeQuestion}
+          onUpdateQuestion={updateQuestion}
+        />
       )}
     </main>
   );

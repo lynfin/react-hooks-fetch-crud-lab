@@ -1,6 +1,6 @@
 import React from "react";
 
-function QuestionItem({ question, onRemoveQuestion }) {
+function QuestionItem({ question, onRemoveQuestion, onUpdateQuestion }) {
   const { id, prompt, answers, correctIndex } = question;
 
   const options = answers.map((answer, index) => (
@@ -20,6 +20,9 @@ function QuestionItem({ question, onRemoveQuestion }) {
     });
   }
 
+  function handleChange(event) {
+    console.log("Answer changed to", e.target.value);
+  }
   return (
     <li>
       <h4>Question {id}</h4>

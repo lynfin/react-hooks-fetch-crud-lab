@@ -1,7 +1,7 @@
 import React from "react";
 import QuestionItem from "./QuestionItem";
 
-function QuestionList({ questions, onRemoveQuestion }) {
+function QuestionList({ questions, onRemoveQuestion, onUpdateQuestion }) {
   return (
     <section>
       <h1>Quiz Questions</h1>
@@ -11,6 +11,7 @@ function QuestionList({ questions, onRemoveQuestion }) {
             key={question.id}
             question={question}
             onRemoveQuestion={onRemoveQuestion}
+            onUpdateQuestion={onUpdateQuestion}
           />
         ))}
       </ul>
