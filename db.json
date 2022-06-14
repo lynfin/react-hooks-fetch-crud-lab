@@ -98,6 +98,17 @@
         "Henry"
       ],
       "id": 9
+    },
+    {
+      "prompt": "Which is not a pet name",
+      "correctIndex": "3",
+      "answers": [
+        "Murdock",
+        "Gretchen",
+        "Gunther",
+        "Samantha"
+      ],
+      "id": 10
     }
   ]
 }

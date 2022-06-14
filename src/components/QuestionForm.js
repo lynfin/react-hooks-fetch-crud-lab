@@ -43,6 +43,7 @@ function QuestionForm({ onAddQuestion }) {
       .then((r) => r.json())
       .then((newQuestion) => {
         onAddQuestion(newQuestion);
+        setFormData(blankForm);
       });
   }
 
