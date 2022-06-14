@@ -21,7 +21,7 @@ function QuestionItem({ question, onRemoveQuestion, onUpdateQuestion }) {
   }
 
   function handleChange(event) {
-    console.log("Answer changed to", e.target.value);
+    console.log("Answer changed to", event.target.value);
   }
   return (
     <li>
@@ -29,7 +29,9 @@ function QuestionItem({ question, onRemoveQuestion, onUpdateQuestion }) {
       <h5>Prompt: {prompt}</h5>
       <label>
         Correct Answer:
-        <select defaultValue={correctIndex}>{options}</select>
+        <select onChange={handleChange} defaultValue={correctIndex}>
+          {options}
+        </select>
       </label>
       <button onClick={handleClick}>Delete Question</button>
     </li>
