@@ -109,6 +109,17 @@
         "Samantha"
       ],
       "id": 10
+    },
+    {
+      "prompt": "Where have you not lived",
+      "correctIndex": "3",
+      "answers": [
+        "Tennessee",
+        "Wisconsin",
+        "Virginia",
+        "Kentucky"
+      ],
+      "id": 11
     }
   ]
 }
