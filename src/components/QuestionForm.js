@@ -19,7 +19,19 @@ function QuestionForm(props) {
 
   function handleSubmit(event) {
     event.preventDefault();
-    console.log(formData);
+    const dbData = {
+      prompt: formData.prompt,
+      correctIndex: formData.correctIndex,
+      answers: [
+        formData.answer1,
+        formData.answer2,
+        formData.answer3,
+        formData.answer4,
+      ],
+    };
+
+    console.log("formData", formData);
+    console.log("dbData", dbData);
   }
 
   return (
